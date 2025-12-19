@@ -1,5 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
+from django.core.files.uploadedfile import UploadedFile
 from django.utils.translation import gettext_lazy as _
 from .models import Profile , UserDocument 
 
@@ -107,6 +109,10 @@ class ProfileUpdateForm(forms.ModelForm):
 
 
 
+
+MAX_UPLOAD_SIZE = 5 * 1024 * 1024  # 5 MB
+ALLOWED_TYPES = ['image/jpeg', 'image/png', 'application/pdf']
+
 class UserDocumentForm(forms.ModelForm):
     class Meta:
         model = UserDocument
@@ -129,11 +135,29 @@ class UserDocumentForm(forms.ModelForm):
             'document_contract_finance': forms.FileInput(attrs={'accept': 'image/*,application/pdf'}),
         }
         labels = {
-            'personal_photo': _('عکس پرسنلی دانش‌آموز / الصورة الشخصية للطالب'),
-            'id_card_front': _('تصویر روی مدرک هویتی / صورة الوجه الأمامي للهوية'),
-            'id_card_back': _('تصویر پشت مدرک هویتی / صورة الوجه الخلفي للهوية'),
-            'last_education_certificate': _('آخرین مدرک تحصیلی / آخر شهادة دراسية'),
-            'school_permission_certificate': _('مجوز معتبر مدرسه / تصريح المدرسة المعتمد'),
-            'document_request_register': _('درخواست ثبت‌نام / طلب التسجيل'),
-            'document_contract_finance': _('قرارداد مالی / العقد المالي'),
+            'personal_photo': _('عکس پرسنلی دانش‌آموز / الصورة الشخصية للطالب / Personal Photo'),
+            'id_card_front': _('تصویر روی مدرک هویتی / صورة الوجه الأمامي للهوية / ID Card Front'),
+            'id_card_back': _('تصویر پشت مدرک هویتی / صورة الوجه الخلفي للهوية / ID Card Back'),
+            'last_education_certificate': _('آخرین مدرک تحصیلی / آخر شهادة دراسية / Last Education Certificate'),
+            'school_permission_certificate': _('مجوز معتبر مدرسه / تصريح المدرسة المعتمد / School Permission Certificate'),
+            'document_request_register': _('درخواست ثبت‌نام / طلب التسجيل / Registration Request'),
+            'document_contract_finance': _('قرارداد مالی / العقد المالي / Contract Finance'),
         }
+
+    def clean(self):
+        cleaned_data = super().clean()
+        for field_name in self.fields:
+            file = cleaned_data.get(field_name)
+            # فقط فایل‌های تازه آپلود شده را بررسی کن
+            if file and isinstance(file, UploadedFile):
+                # محدودیت حجم
+                if file.size > MAX_UPLOAD_SIZE:
+                    raise ValidationError(
+                        {field_name: _('حجم فایل انتخاب شده بیش از ۵ مگابایت است. / حجم الملف أكبر من ٥ ميجابايت / File size exceeds 5MB')}
+                    )
+                # محدودیت نوع فایل
+                if file.content_type not in ALLOWED_TYPES:
+                    raise ValidationError(
+                        {field_name: _('نوع فایل مجاز نیست. فقط jpg, png, pdf قبول است. / نوع الملف غير مسموح. فقط jpg, png, pdf / Invalid file type. Only jpg, png, pdf allowed')}
+                    )
+        return cleaned_data
