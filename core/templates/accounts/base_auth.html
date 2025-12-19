@@ -1,0 +1,252 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:'fa' }}"
+      dir="{% if LANGUAGE_CODE == 'fa' or LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% trans "پنل کاربری" %}{% endblock %}</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            min-height: 100vh;
+        }
+
+        .top-nav {
+            background-color: #2c3e50;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        .lang-switcher {
+            padding: 4px 8px;
+            border-radius: 6px;
+            direction: ltr;
+            text-align: center;
+            background: #34495e;
+            color: white;
+            border: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 70px);
+            padding: 20px;
+        }
+
+        .auth-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 460px;
+            direction: {% if LANGUAGE_CODE == 'fa' or LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %};
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            direction: {% if LANGUAGE_CODE == 'fa' or LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %};
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* موبایل */
+        @media (max-width: 768px) {
+
+            .top-nav {
+                padding: 1rem;
+            }
+
+            .nav-links,
+            .lang-form {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #34495e;
+                padding: 1.2rem;
+                gap: 1.1rem;
+            }
+
+            .nav-links.mobile-show,
+            .lang-form.mobile-show {
+                display: flex;
+            }
+
+            /* 🔧 اصلاح اصلی: دیگه روی هم نمی‌افتن */
+            .nav-links,
+            .lang-form {
+                position: static;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links a,
+            .lang-switcher {
+                width: 100%;
+                text-align: {% if LANGUAGE_CODE == 'fa' or LANGUAGE_CODE == 'ar' %}right{% else %}left{% endif %};
+                padding: 10px 0;
+                color: #ecf0f1;
+                font-weight: 500;
+                white-space: normal;
+                line-height: 1.4;
+            }
+
+            .lang-switcher {
+                padding: 8px;
+                text-align: center;
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+{% if user.is_authenticated %}
+<nav class="top-nav">
+    <a href="#" class="logo">{% trans "پنل دانشجو" %}</a>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="{% url 'accounts:profile' %}">{% trans "پروفایل" %}</a>
+        <a href="{% url 'accounts:profile_edit' %}">{% trans "ویرایش پروفایل" %}</a>
+        <a href="{% url 'accounts:total_mostandata' %}">{% trans "مستندات برای ثبت نام" %}</a>
+        <a href="{% url 'accounts:documents' %}">{% trans "بارگذاری مدارک ثبت نام" %}</a>
+        <a href="{% url 'accounts:logout' %}">{% trans "خروج" %}</a>
+    </div>
+
+    <form class="lang-form" id="langForm" action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+        <select name="language" class="lang-switcher" onchange="this.form.submit()">
+            <option value="fa" {% if LANGUAGE_CODE == 'fa' %}selected{% endif %}>فارسی</option>
+            <option value="ar" {% if LANGUAGE_CODE == 'ar' %}selected{% endif %}>العربية</option>
+            <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+        </select>
+    </form>
+</nav>
+{% else %}
+<nav class="top-nav">
+    <a href="#" class="logo">{% trans "پنل دانشجو" %}</a>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+    <form class="lang-form" id="langForm" action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+        <select name="language" class="lang-switcher" onchange="this.form.submit()">
+            <option value="fa" {% if LANGUAGE_CODE == 'fa' %}selected{% endif %}>فارسی</option>
+            <option value="ar" {% if LANGUAGE_CODE == 'ar' %}selected{% endif %}>العربية</option>
+            <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+        </select>
+    </form>
+</nav>
+{% endif %}
+
+<div class="main-content">
+    <div class="auth-container">
+        <h1>{% block header %}{% endblock %}</h1>
+        {% block content %}{% endblock %}
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navLinks')?.classList.toggle('mobile-show');
+        document.getElementById('langForm')?.classList.toggle('mobile-show');
+    }
+</script>
+
+</body>
+</html>

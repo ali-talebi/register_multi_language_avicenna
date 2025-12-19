@@ -1,0 +1,19 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "ارسال مدارک" %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>{% trans "ارسال مدارک" %}</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% trans "ارسال مدارک" %}</button>
+    </form>
+</body>
+</html>

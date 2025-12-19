@@ -1,0 +1,97 @@
+{% extends "accounts/base_auth.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "ویرایش پروفایل" %}{% endblock %}
+{% block header %}{% trans "ویرایش اطلاعات پروفایل" %}{% endblock %}
+
+{% block content %}
+<style>
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 1rem;
+    }
+
+    /* پشتیبانی از انواع فیلد: text, email, date, number, textarea و ... */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 14px;
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        font-size: 1rem;
+        background-color: #f9fbfd;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        direction: {% if LANGUAGE_CODE == 'fa' or LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %};
+    }
+
+    .form-group textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #3498db;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+    }
+
+    /* خطاها */
+    .error-message {
+        color: #c62828;
+        background-color: #ffebee;
+        padding: 8px 12px;
+        border-radius: 8px;
+        margin-top: 0.4rem;
+        font-size: 0.95rem;
+        border: 1px solid #ffcdd2;
+        display: block;
+    }
+
+    /* لینک بازگشت */
+    .auth-links {
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+
+    .auth-links a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .auth-links a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<form method="post">
+    {% csrf_token %}
+    
+    {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+                <small class="error-message">{{ field.errors }}</small>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <button type="submit">{% trans "ذخیره تغییرات" %}</button>
+</form>
+
+<div class="auth-links">
+    <a href="{% url 'accounts:profile' %}">{% trans "بازگشت به پروفایل" %}</a>
+</div>
+{% endblock %}

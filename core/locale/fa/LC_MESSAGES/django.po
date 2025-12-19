@@ -1,0 +1,369 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-17 17:00+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: .\accounts\forms.py:12
+msgid "نام کاربری"
+msgstr ""
+
+#: .\accounts\forms.py:16 .\accounts\forms.py:23
+#: .\templates\accounts\login.html:21 .\templates\accounts\register.html:22
+msgid "رمز عبور"
+msgstr ""
+
+#: .\accounts\forms.py:24
+msgid "رمز عبور خود را وارد کنید"
+msgstr ""
+
+#: .\accounts\forms.py:27 .\templates\accounts\register.html:27
+msgid "تکرار رمز عبور"
+msgstr ""
+
+#: .\accounts\forms.py:28
+msgid "رمز عبور را دوباره وارد کنید"
+msgstr ""
+
+#: .\accounts\forms.py:35
+msgid "example@domain.com"
+msgstr ""
+
+#: .\accounts\forms.py:38 .\templates\accounts\login.html:17
+#: .\templates\accounts\profile.html:11 .\templates\accounts\register.html:17
+msgid "ایمیل"
+msgstr ""
+
+#: .\accounts\forms.py:44
+msgid "این ایمیل قبلاً ثبت شده است."
+msgstr ""
+
+#: .\accounts\forms.py:53
+msgid "رمز عبور یکسان نیست."
+msgstr ""
+
+#: .\accounts\forms.py:83
+msgid "مثال: 0012345678"
+msgstr ""
+
+#: .\accounts\forms.py:84
+msgid "مثال: محمد"
+msgstr ""
+
+#: .\accounts\forms.py:85
+msgid "مثال: 0087654321"
+msgstr ""
+
+#: .\accounts\forms.py:86
+msgid "مثال: تهران"
+msgstr ""
+
+#: .\accounts\forms.py:89
+msgid "آدرس کامل محل سکونت خود را وارد کنید"
+msgstr ""
+
+#: .\accounts\forms.py:91
+msgid "مثال: A12345678"
+msgstr ""
+
+#: .\accounts\forms.py:92 .\accounts\forms.py:93
+msgid "مثال: +989123456789"
+msgstr ""
+
+#: .\accounts\forms.py:96 .\accounts\models.py:16
+#: .\templates\accounts\profile.html:16
+msgid "کد ملی / الرقم الوطني"
+msgstr ""
+
+#: .\accounts\forms.py:97 .\accounts\models.py:23
+#: .\templates\accounts\profile.html:20
+msgid "نام پدر / اسم الأب"
+msgstr ""
+
+#: .\accounts\forms.py:98 .\accounts\models.py:30
+#: .\templates\accounts\profile.html:24
+msgid "کد ملی پدر / الرقم الوطني للأب"
+msgstr ""
+
+#: .\accounts\forms.py:99 .\accounts\models.py:37
+#: .\templates\accounts\profile.html:28
+msgid "شهر محل سکونت / المدينة"
+msgstr ""
+
+#: .\accounts\forms.py:100 .\accounts\models.py:44
+#: .\templates\accounts\profile.html:32
+msgid "آدرس دقیق / العنوان التفصيلي"
+msgstr ""
+
+#: .\accounts\forms.py:101 .\accounts\models.py:51
+#: .\templates\accounts\profile.html:36
+msgid "شماره پاسپورت / رقم جواز السفر"
+msgstr ""
+
+#: .\accounts\forms.py:102 .\accounts\models.py:58
+#: .\templates\accounts\profile.html:40
+msgid "شماره تلگرام / رقم تيليجرام"
+msgstr ""
+
+#: .\accounts\forms.py:103 .\accounts\models.py:65
+#: .\templates\accounts\profile.html:48
+msgid "شماره واتساپ / رقم واتساب"
+msgstr ""
+
+#: .\accounts\forms.py:132 .\accounts\models.py:95
+msgid "عکس پرسنلی دانش‌آموز / الصورة الشخصية للطالب"
+msgstr ""
+
+#: .\accounts\forms.py:133 .\accounts\models.py:100
+msgid "تصویر روی مدرک هویتی / صورة الوجه الأمامي للهوية"
+msgstr ""
+
+#: .\accounts\forms.py:134 .\accounts\models.py:105
+msgid "تصویر پشت مدرک هویتی / صورة الوجه الخلفي للهوية"
+msgstr ""
+
+#: .\accounts\forms.py:135 .\accounts\models.py:110
+msgid "آخرین مدرک تحصیلی / آخر شهادة دراسية"
+msgstr ""
+
+#: .\accounts\forms.py:136 .\accounts\models.py:115
+msgid "مجوز معتبر مدرسه / تصريح المدرسة المعتمد"
+msgstr ""
+
+#: .\accounts\forms.py:137 .\accounts\models.py:121
+msgid "درخواست ثبت‌نام / طلب التسجيل"
+msgstr ""
+
+#: .\accounts\forms.py:138 .\accounts\models.py:126
+msgid "قرارداد مالی / العقد المالي"
+msgstr ""
+
+#: .\accounts\models.py:11 .\accounts\models.py:90
+msgid "کاربر / المستخدم"
+msgstr ""
+
+#: .\accounts\models.py:77
+msgid "پروفایل کاربر"
+msgstr ""
+
+#: .\accounts\models.py:78
+msgid "پروفایل کاربران"
+msgstr ""
+
+#: .\accounts\models.py:132
+msgid "زمان بارگذاری / وقت الرفع"
+msgstr ""
+
+#: .\accounts\models.py:137
+msgid "آخرین بروزرسانی / آخر تحديث"
+msgstr ""
+
+#: .\accounts\models.py:141
+msgid "مدارک"
+msgstr ""
+
+#: .\accounts\models.py:145 .\templates\accounts\documents.html:4
+msgid "مدارک کاربر"
+msgstr ""
+
+#: .\accounts\models.py:146
+msgid "مدارک کاربران"
+msgstr ""
+
+#: .\core\settings.py:132
+msgid "Persian"
+msgstr ""
+
+#: .\core\settings.py:133
+msgid "Arabic"
+msgstr ""
+
+#: .\templates\accounts\base_auth.html:7
+msgid "پنل کاربری"
+msgstr ""
+
+#: .\templates\accounts\base_auth.html:212
+msgid "پنل دانشجو"
+msgstr ""
+
+#: .\templates\accounts\base_auth.html:214
+msgid "پروفایل"
+msgstr ""
+
+#: .\templates\accounts\base_auth.html:215 .\templates\accounts\profile.html:64
+#: .\templates\accounts\profile_edit.html:4
+msgid "ویرایش پروفایل"
+msgstr ""
+
+#: .\templates\accounts\base_auth.html:216
+msgid "مستندات برای ثبت نام"
+msgstr ""
+
+#: .\templates\accounts\base_auth.html:217
+msgid "بارگذاری مدارک ثبت نام"
+msgstr ""
+
+#: .\templates\accounts\base_auth.html:219
+msgid "خروج"
+msgstr ""
+
+#: .\templates\accounts\documents.html:5
+msgid "آپلود مدارک"
+msgstr ""
+
+#: .\templates\accounts\documents.html:19
+msgid "مشاهده فایل آپلودشده"
+msgstr ""
+
+#: .\templates\accounts\documents.html:36
+msgid "ذخیره مدارک"
+msgstr ""
+
+#: .\templates\accounts\documents.html:40
+#: .\templates\accounts\profile_edit.html:25
+#: .\templates\documents\success.html:14
+msgid "بازگشت به پروفایل"
+msgstr ""
+
+#: .\templates\accounts\login.html:4 .\templates\accounts\login.html:5
+msgid "ورود کاربر"
+msgstr ""
+
+#: .\templates\accounts\login.html:10
+msgid "ایمیل یا رمز عبور اشتباه است."
+msgstr ""
+
+#: .\templates\accounts\login.html:24
+#: .\templates\accounts\password_reset_complete.html:3
+#: .\templates\accounts\register.html:37
+msgid "ورود"
+msgstr ""
+
+#: .\templates\accounts\login.html:29
+msgid "کاربر جدید هستید؟"
+msgstr ""
+
+#: .\templates\accounts\login.html:30 .\templates\accounts\register.html:4
+#: .\templates\accounts\register.html:5 .\templates\accounts\register.html:31
+msgid "ثبت‌نام"
+msgstr ""
+
+#: .\templates\accounts\login.html:33
+msgid "رمز عبور را فراموش کرده‌اید؟"
+msgstr ""
+
+#: .\templates\accounts\mostanadat_list.html:11
+msgid ""
+"لیست اسناد مورد نیاز را دانلود کنید و پس از پر کردن، در سیستم آپلود نمایید."
+msgstr ""
+
+#: .\templates\accounts\mostanadat_list.html:21
+msgid "دانلود فایل"
+msgstr ""
+
+#: .\templates\accounts\mostanadat_list.html:33
+msgid "هیچ سندی برای نمایش وجود ندارد."
+msgstr ""
+
+#: .\templates\accounts\password_reset_complete.html:2
+msgid "رمز عبور شما با موفقیت تغییر کرد. حالا می‌توانید وارد شوید."
+msgstr ""
+
+#: .\templates\accounts\password_reset_confirm.html:2
+msgid "تعیین رمز عبور جدید"
+msgstr ""
+
+#: .\templates\accounts\password_reset_confirm.html:6
+msgid "تغییر رمز عبور"
+msgstr ""
+
+#: .\templates\accounts\password_reset_done.html:2
+msgid "لینک بازیابی رمز عبور به ایمیل شما ارسال شد."
+msgstr ""
+
+#: .\templates\accounts\password_reset_form.html:2
+msgid "فرم بازیابی رمز عبور"
+msgstr ""
+
+#: .\templates\accounts\password_reset_form.html:6
+msgid "ارسال لینک بازیابی"
+msgstr ""
+
+#: .\templates\accounts\profile.html:4 .\templates\accounts\profile.html:5
+msgid "پروفایل کاربری"
+msgstr ""
+
+#: .\templates\accounts\profile.html:11
+msgid "تنظیم نشده"
+msgstr ""
+
+#: .\templates\accounts\profile.html:58
+msgid "هیچ اطلاعاتی در پروفایل شما ثبت نشده است."
+msgstr ""
+
+#: .\templates\accounts\profile.html:67
+msgid "خروج از حساب"
+msgstr ""
+
+#: .\templates\accounts\profile_edit.html:5
+msgid "ویرایش اطلاعات پروفایل"
+msgstr ""
+
+#: .\templates\accounts\profile_edit.html:21
+msgid "ذخیره تغییرات"
+msgstr ""
+
+#: .\templates\accounts\register.html:36
+msgid "قبلاً حساب دارید؟"
+msgstr ""
+
+#: .\templates\documents\success.html:8
+msgid "مدارک ارسال شد"
+msgstr ""
+
+#: .\templates\documents\success.html:12
+msgid "مدارک با موفقیت ارسال شد!"
+msgstr ""
+
+#: .\templates\documents\success.html:13
+msgid "ممنون از شما، پرونده شما ثبت شد."
+msgstr ""
+
+#: .\templates\documents\upload.html:8 .\templates\documents\upload.html:12
+#: .\templates\documents\upload.html:16
+msgid "ارسال مدارک"
+msgstr ""
+
+#: .\templates\profiles\create.html:6
+msgid "تکمیل پروفایل"
+msgstr ""
+
+#: .\templates\profiles\create.html:10
+msgid "تکمیل پروفایل کاربر"
+msgstr ""
+
+#: .\templates\profiles\create.html:14
+msgid "ذخیره"
+msgstr ""
+
+msgid "صفحه مورد نظر پیدا نشد"
+msgstr ""
+
+msgid "صفحه‌ای که دنبال آن هستید وجود ندارد یا آدرس آن اشتباه وارد شده است."
+msgstr ""
+
+msgid "بازگشت به صفحه اصلی"
+msgstr ""

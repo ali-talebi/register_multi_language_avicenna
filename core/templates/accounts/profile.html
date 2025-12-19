@@ -1,0 +1,70 @@
+{% extends "accounts/base_auth.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "پروفایل کاربری" %}{% endblock %}
+{% block header %}{% trans "پروفایل کاربری" %}{% endblock %}
+
+{% block content %}
+    <div class="profile-info" style="line-height: 1.9; color: #2c3e50;">
+
+        <!-- اطلاعات کاربری -->
+        <p><strong>{% trans "ایمیل" %}:</strong> {{ user.email|default:_("تنظیم نشده") }}</p>
+
+        <!-- اطلاعات پروفایل -->
+        {% with profile=profile %}
+            {% if profile.national_id %}
+                <p><strong>{% trans "کد ملی / الرقم الوطني" %}:</strong> {{ profile.national_id }}</p>
+            {% endif %}
+
+            {% if profile.father_name %}
+                <p><strong>{% trans "نام پدر / اسم الأب" %}:</strong> {{ profile.father_name }}</p>
+            {% endif %}
+
+            {% if profile.father_national_id %}
+                <p><strong>{% trans "کد ملی پدر / الرقم الوطني للأب" %}:</strong> {{ profile.father_national_id }}</p>
+            {% endif %}
+
+            {% if profile.city %}
+                <p><strong>{% trans "شهر محل سکونت / المدينة" %}:</strong> {{ profile.city }}</p>
+            {% endif %}
+
+            {% if profile.address %}
+                <p><strong>{% trans "آدرس دقیق / العنوان التفصيلي" %}:</strong> {{ profile.address }}</p>
+            {% endif %}
+
+            {% if profile.passport_number %}
+                <p><strong>{% trans "شماره پاسپورت / رقم جواز السفر" %}:</strong> {{ profile.passport_number }}</p>
+            {% endif %}
+
+            {% if profile.telegram_phone %}
+                <p><strong>{% trans "شماره تلگرام / رقم تيليجرام" %}:</strong> 
+                    <a href="https://t.me/{{ profile.telegram_phone|cut:'+' }}" target="_blank" style="color:#3498db; text-decoration:underline;">
+                        {{ profile.telegram_phone }}
+                    </a>
+                </p>
+            {% endif %}
+
+            {% if profile.whatsapp_phone %}
+                <p><strong>{% trans "شماره واتساپ / رقم واتساب" %}:</strong>
+                    <a href="https://wa.me/{{ profile.whatsapp_phone|cut:' ' }}" target="_blank" style="color:#3498db; text-decoration:underline;">
+                        {{ profile.whatsapp_phone }}
+                    </a>
+                </p>
+            {% endif %}
+        {% endwith %}
+
+        <!-- اگر هیچ اطلاعاتی نبود -->
+        {% if not profile.national_id and not profile.father_name and not profile.city and not profile.address %}
+            <p style="color: #7f8c8d; font-style: italic;">{% trans "هیچ اطلاعاتی در پروفایل شما ثبت نشده است." %}</p>
+        {% endif %}
+    </div>
+
+    <div class="auth-links" style="margin-top: 2rem; display: flex; flex-direction: column; gap: 12px;">
+        <a href="{% url 'accounts:profile_edit' %}" style="color: white; background-color: #2980b9; padding: 10px; text-align: center; border-radius: 8px; text-decoration: none; font-weight: 600;">
+            {% trans "ویرایش پروفایل" %}
+        </a>
+        <a href="{% url 'accounts:logout' %}" style="color: white; background-color: #e74c3c; padding: 10px; text-align: center; border-radius: 8px; text-decoration: none; font-weight: 600;">
+            {% trans "خروج از حساب" %}
+        </a>
+    </div>
+{% endblock %}

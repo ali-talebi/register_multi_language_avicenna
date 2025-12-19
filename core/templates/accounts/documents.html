@@ -1,0 +1,150 @@
+{% extends "accounts/base_auth.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "مدارک کاربر" %}{% endblock %}
+{% block header %}{% trans "آپلود مدارک" %}{% endblock %}
+
+{% block content %}
+<style>
+    .form-group {
+        margin-bottom: 1.8rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.6rem;
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 1rem;
+    }
+
+    /* ورودی‌های معمولی و فایل */
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="number"],
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 14px;
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        font-size: 1rem;
+        background-color: #f9fbfd;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        direction: {% if LANGUAGE_CODE == 'fa' or LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %};
+    }
+
+    /* استایل ویژه برای فیلد آپلود فایل */
+    .form-group input[type="file"] {
+        width: 100%;
+        padding: 8px 0;
+        border: 2px dashed #cbd5e0;
+        border-radius: 10px;
+        background-color: #f8fafc;
+        font-size: 0.95rem;
+        color: #4a5568;
+        cursor: pointer;
+        transition: border-color 0.3s;
+    }
+
+    .form-group input[type="file"]:focus {
+        outline: none;
+        border-color: #3498db;
+        background-color: #edf7ff;
+    }
+
+    /* فایل آپلودشده — لینک */
+    .uploaded-file-link {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 6px 12px;
+        background-color: #e8f5e9;
+        color: #27ae60;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .uploaded-file-link:hover {
+        background-color: #c8e6c9;
+        text-decoration: underline;
+    }
+
+    /* متن راهنما (help_text) */
+    .form-group small {
+        display: block;
+        margin-top: 0.4rem;
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    /* خطاها */
+    .error-message {
+        color: #c62828;
+        background-color: #ffebee;
+        padding: 8px 12px;
+        border-radius: 8px;
+        margin-top: 0.4rem;
+        font-size: 0.95rem;
+        border: 1px solid #ffcdd2;
+        display: block;
+    }
+
+    /* لینک بازگشت */
+    .auth-links {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .auth-links a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .auth-links a:hover {
+        text-decoration: underline;
+    }
+
+    textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+</style>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            
+            <!-- اگر فایل آپلود شده باشد، لینک دانلود نمایش داده شود -->
+            {% if document and field.value %}
+                <a href="{{ field.value.url }}" target="_blank" class="uploaded-file-link">
+                    {% trans "مشاهده فایل آپلودشده" %}
+                </a>
+            {% endif %}
+            
+            {{ field }}
+            
+            {% if field.help_text %}
+                <small>{{ field.help_text }}</small>
+            {% endif %}
+            
+            {% if field.errors %}
+                <small class="error-message">{{ field.errors }}</small>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <button type="submit">{% trans "ذخیره مدارک" %}</button>
+</form>
+
+<div class="auth-links">
+    <a href="{% url 'accounts:profile' %}">{% trans "بازگشت به پروفایل" %}</a>
+</div>
+{% endblock %}

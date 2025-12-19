@@ -1,0 +1,35 @@
+{% extends "accounts/base_auth.html" %}
+{% load i18n %}
+
+{% block title %}
+{% trans "صفحه پیدا نشد" %}
+{% endblock %}
+
+{% block header %}
+404
+{% endblock %}
+
+{% block content %}
+
+<div style="text-align: center; padding: 20px">
+
+    <p style="margin-bottom: 24px; line-height: 1.8; color: #555">
+        {% trans "صفحه‌ای که دنبال آن هستید وجود ندارد یا آدرس آن اشتباه وارد شده است." %}
+    </p>
+
+    <a href="/"
+       style="
+           display:inline-block;
+           padding:12px 28px;
+           background:#3498db;
+           color:white;
+           border-radius:10px;
+           text-decoration:none;
+           font-weight:500;
+       ">
+        {% trans "بازگشت به صفحه اصلی" %}
+    </a>
+
+</div>
+
+{% endblock %}

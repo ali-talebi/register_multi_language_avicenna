@@ -1,0 +1,275 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-17 17:19+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\accounts\forms.py:12
+
+msgid "نام کاربری"
+msgstr "Username"
+
+msgid "رمز عبور"
+msgstr "Password"
+
+msgid "رمز عبور خود را وارد کنید"
+msgstr "Enter your password"
+
+msgid "تکرار رمز عبور"
+msgstr "Confirm password"
+
+msgid "رمز عبور را دوباره وارد کنید"
+msgstr "Re-enter your password"
+
+msgid "example@domain.com"
+msgstr "example@domain.com"
+
+msgid "ایمیل"
+msgstr "Email"
+
+msgid "این ایمیل قبلاً ثبت شده است."
+msgstr "This email is already registered."
+
+msgid "رمز عبور یکسان نیست."
+msgstr "Passwords do not match."
+
+msgid "مثال: 0012345678"
+msgstr "Example: 0012345678"
+
+msgid "مثال: محمد"
+msgstr "Example: Mohammad"
+
+msgid "مثال: 0087654321"
+msgstr "Example: 0087654321"
+
+msgid "مثال: تهران"
+msgstr "Example: Tehran"
+
+msgid "آدرس کامل محل سکونت خود را وارد کنید"
+msgstr "Enter your full residential address"
+
+msgid "مثال: A12345678"
+msgstr "Example: A12345678"
+
+msgid "مثال: +989123456789"
+msgstr "Example: +989123456789"
+
+msgid "کد ملی / الرقم الوطني"
+msgstr "National ID"
+
+msgid "نام پدر / اسم الأب"
+msgstr "Father's name"
+
+msgid "کد ملی پدر / الرقم الوطني للأب"
+msgstr "Father's National ID"
+
+msgid "شهر محل سکونت / المدينة"
+msgstr "City of residence"
+
+msgid "آدرس دقیق / العنوان التفصيلي"
+msgstr "Full address"
+
+msgid "شماره پاسپورت / رقم جواز السفر"
+msgstr "Passport number"
+
+msgid "شماره تلگرام / رقم تيليجرام"
+msgstr "Telegram number"
+
+msgid "شماره واتساپ / رقم واتساب"
+msgstr "WhatsApp number"
+
+msgid "عکس پرسنلی دانش‌آموز / الصورة الشخصية للطالب"
+msgstr "Student personal photo"
+
+msgid "تصویر روی مدرک هویتی / صورة الوجه الأمامي للهوية"
+msgstr "Front side of ID document"
+
+msgid "تصویر پشت مدرک هویتی / صورة الوجه الخلفي للهوية"
+msgstr "Back side of ID document"
+
+msgid "آخرین مدرک تحصیلی / آخر شهادة دراسية"
+msgstr "Latest educational certificate"
+
+msgid "مجوز معتبر مدرسه / تصريح المدرسة المعتمد"
+msgstr "Valid school authorization"
+
+msgid "درخواست ثبت‌نام / طلب التسجيل"
+msgstr "Registration request"
+
+msgid "قرارداد مالی / العقد المالي"
+msgstr "Financial contract"
+
+msgid "کاربر / المستخدم"
+msgstr "User"
+
+msgid "پروفایل کاربر"
+msgstr "User profile"
+
+msgid "پروفایل کاربران"
+msgstr "Users profiles"
+
+msgid "زمان بارگذاری / وقت الرفع"
+msgstr "Upload time"
+
+msgid "آخرین بروزرسانی / آخر تحديث"
+msgstr "Last update"
+
+msgid "مدارک"
+msgstr "Documents"
+
+msgid "مدارک کاربر"
+msgstr "User documents"
+
+msgid "مدارک کاربران"
+msgstr "Users documents"
+
+msgid "Persian"
+msgstr "Persian"
+
+msgid "Arabic"
+msgstr "Arabic"
+
+msgid "English"
+msgstr "English"
+
+msgid "پنل کاربری"
+msgstr "User Panel"
+
+msgid "پنل دانشجو"
+msgstr "Student Panel"
+
+msgid "پروفایل"
+msgstr "Profile"
+
+msgid "ویرایش پروفایل"
+msgstr "Edit Profile"
+
+msgid "مستندات برای ثبت نام"
+msgstr "Registration documents"
+
+msgid "بارگذاری مدارک ثبت نام"
+msgstr "Upload registration documents"
+
+msgid "خروج"
+msgstr "Logout"
+
+msgid "آپلود مدارک"
+msgstr "Upload documents"
+
+msgid "مشاهده فایل آپلودشده"
+msgstr "View uploaded file"
+
+msgid "ذخیره مدارک"
+msgstr "Save documents"
+
+msgid "بازگشت به پروفایل"
+msgstr "Back to profile"
+
+msgid "ورود کاربر"
+msgstr "User login"
+
+msgid "ایمیل یا رمز عبور اشتباه است."
+msgstr "Incorrect email or password."
+
+msgid "ورود"
+msgstr "Login"
+
+msgid "کاربر جدید هستید؟"
+msgstr "New user?"
+
+msgid "ثبت‌نام"
+msgstr "Register"
+
+msgid "رمز عبور را فراموش کرده‌اید؟"
+msgstr "Forgot your password?"
+
+msgid "لیست اسناد مورد نیاز را دانلود کنید و پس از پر کردن، در سیستم آپلود نمایید."
+msgstr "Download the required documents, fill them out, and upload them to the system."
+
+msgid "دانلود فایل"
+msgstr "Download file"
+
+msgid "هیچ سندی برای نمایش وجود ندارد."
+msgstr "No documents available."
+
+msgid "رمز عبور شما با موفقیت تغییر کرد. حالا می‌توانید وارد شوید."
+msgstr "Your password has been changed successfully. You can now log in."
+
+msgid "تعیین رمز عبور جدید"
+msgstr "Set new password"
+
+msgid "تغییر رمز عبور"
+msgstr "Change password"
+
+msgid "لینک بازیابی رمز عبور به ایمیل شما ارسال شد."
+msgstr "Password recovery link has been sent to your email."
+
+msgid "فرم بازیابی رمز عبور"
+msgstr "Password recovery form"
+
+msgid "ارسال لینک بازیابی"
+msgstr "Send recovery link"
+
+msgid "پروفایل کاربری"
+msgstr "User profile"
+
+msgid "تنظیم نشده"
+msgstr "Not set"
+
+msgid "هیچ اطلاعاتی در پروفایل شما ثبت نشده است."
+msgstr "No information has been registered in your profile."
+
+msgid "خروج از حساب"
+msgstr "Logout"
+
+msgid "ویرایش اطلاعات پروفایل"
+msgstr "Edit profile information"
+
+msgid "ذخیره تغییرات"
+msgstr "Save changes"
+
+msgid "قبلاً حساب دارید؟"
+msgstr "Already have an account?"
+
+msgid "مدارک ارسال شد"
+msgstr "Documents submitted"
+
+msgid "مدارک با موفقیت ارسال شد!"
+msgstr "Documents uploaded successfully!"
+
+msgid "ممنون از شما، پرونده شما ثبت شد."
+msgstr "Thank you, your application has been submitted."
+
+msgid "ارسال مدارک"
+msgstr "Submit documents"
+
+msgid "تکمیل پروفایل"
+msgstr "Complete profile"
+
+msgid "تکمیل پروفایل کاربر"
+msgstr "Complete user profile"
+
+msgid "ذخیره"
+msgstr "Save"
+
+msgid "صفحه مورد نظر پیدا نشد"
+msgstr "Page Not Found"
+
+msgid "صفحه‌ای که دنبال آن هستید وجود ندارد یا آدرس آن اشتباه وارد شده است."
+msgstr "The page you are looking for does not exist or the address is incorrect."
+
+msgid "بازگشت به صفحه اصلی"
+msgstr "Back to homepage"

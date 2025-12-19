@@ -1,0 +1,38 @@
+{% extends "accounts/base_auth.html" %}
+{% load i18n %}
+
+{% block title %}اسناد قابل دانلود{% endblock %}
+{% block header %}اسناد مورد نیاز برای ثبت‌نام{% endblock %}
+
+{% block content %}
+    {% if documents %}
+        <div style="line-height: 2; color: #2c3e50;">
+            <p style="text-align: center; margin-bottom: 1.5rem; color: #7f8c8d;">
+                {% trans "لیست اسناد مورد نیاز را دانلود کنید و پس از پر کردن، در سیستم آپلود نمایید." %}
+            </p>
+            <ul style="list-style: none; padding: 0;">
+                {% for doc in documents %}
+                    <li style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                        <strong>{{ doc.name_document }}</strong>
+                        <div style="margin-top: 6px;">
+                            <a href="{{ doc.file_document.url }}" 
+                               download 
+                               style="color: #2980b9; text-decoration: none; font-weight: 600; display: inline-block;">
+                                📥 {% trans "دانلود فایل" %}
+                            </a>
+                            <span style="color: #7f8c8d; font-size: 0.9rem; margin-right: 10px;">
+                                ({{ doc.file_document.size|filesizeformat }})
+                            </span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p style="text-align: center; color: #e74c3c;">
+            {% trans "هیچ سندی برای نمایش وجود ندارد." %}
+        </p>
+    {% endif %}
+
+
+{% endblock %}
